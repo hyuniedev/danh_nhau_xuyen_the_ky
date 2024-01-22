@@ -1,21 +1,29 @@
 using System.Collections;
 using System.Collections.Generic;
+using DefaultNamespace;
 using UnityEngine;
 
-public class Move : MonoBehaviour
+public class Move : Hero
 {
     [SerializeField] private Transform targetPosition;
-
-    [SerializeField] private float speedMove = 20f;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
+    [SerializeField] private LayerMask layerMask;
+    
     void Update()
     {
-        Vector3.MoveTowards(this.transform.position, targetPosition.position, speedMove);
+        this.transform.position = Vector3.MoveTowards(this.transform.position, targetPosition.position, this.Speed * Time.fixedDeltaTime);
+    }
+
+    private bool checkRight()
+    {
+        Debug.DrawRay(this.transform.position,this.transform.position + this.Tamdanh * Vector3.right,Color.red);
+        RaycastHit2D hit = Physics2D.Raycast(this.transform.position, Vector2.right, this.Tamdanh, layerMask);
+        return hit.collider != null;
+    }
+
+    private Vector3 getVectorMove(Transform target)
+    {
+        return new Vector3(target.position.x - this.transform.position.x,
+            target.position.y - this.transform.position.y,
+            target.position.z - this.transform.position.z);
     }
 }

@@ -194,7 +194,7 @@ Transform:
   m_GameObject: {fileID: 201858762}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -14.67, y: 0, z: 0}
+  m_LocalPosition: {x: -11.18, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -358,7 +358,7 @@ Transform:
   m_GameObject: {fileID: 395589486}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 14.79, y: 0, z: 0}
+  m_LocalPosition: {x: 11.35, y: 0, z: 0}
   m_LocalScale: {x: -1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -702,6 +702,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1042236438}
   - component: {fileID: 1042236439}
+  - component: {fileID: 1042236440}
   m_Layer: 6
   m_Name: Player (1)
   m_TagString: Untagged
@@ -760,6 +761,25 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: 0}
   m_Size: {x: 1, y: 2}
   m_Direction: 0
+--- !u!114 &1042236440
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1042236437}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 034337f5772eeeb40af92944c0ca7366, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  heart: 100
+  speed: 1
+  tamdanh: 10
+  targetPosition: {fileID: 1728665995}
+  layerMask:
+    serializedVersion: 2
+    m_Bits: 8
 --- !u!1 &1224156653
 GameObject:
   m_ObjectHideFlags: 0
@@ -832,7 +852,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 5
+  m_SortingOrder: 6
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
   m_Color: {r: 0.90188676, g: 0.8864716, b: 0, a: 1}
   m_FlipX: 0
@@ -1152,6 +1172,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1728665995}
   - component: {fileID: 1728665996}
+  - component: {fileID: 1728665997}
   m_Layer: 3
   m_Name: Player
   m_TagString: Untagged
@@ -1210,6 +1231,25 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: 0}
   m_Size: {x: 1, y: 2}
   m_Direction: 0
+--- !u!114 &1728665997
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1728665994}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 034337f5772eeeb40af92944c0ca7366, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  heart: 100
+  speed: 1
+  tamdanh: 2
+  targetPosition: {fileID: 1042236438}
+  layerMask:
+    serializedVersion: 2
+    m_Bits: 64
 --- !u!1 &1829294825
 GameObject:
   m_ObjectHideFlags: 0
