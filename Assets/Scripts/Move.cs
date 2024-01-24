@@ -7,23 +7,32 @@ public class Move : Hero
 {
     [SerializeField] private Transform targetPosition;
     [SerializeField] private LayerMask layerMask;
+    private Transform targetMove;
+    private bool checkE;
     
     void Update()
     {
-        this.transform.position = Vector3.MoveTowards(this.transform.position, targetPosition.position, this.Speed * Time.fixedDeltaTime);
+        checkE = checkRight();
+        if (checkE)
+        {
+            targetMove = targetPosition;
+        }
+        else
+        {
+            targetMove = transform;
+        }
+        this.transform.position = Vector3.MoveTowards(this.transform.position, targetMove.position, this.Speed * Time.fixedDeltaTime);
     }
 
     private bool checkRight()
     {
-        Debug.DrawRay(this.transform.position,this.transform.position + this.Tamdanh * Vector3.right,Color.red);
-        RaycastHit2D hit = Physics2D.Raycast(this.transform.position, Vector2.right, this.Tamdanh, layerMask);
-        return hit.collider != null;
+        Debug.DrawLine(this.transform.position,this.transform.position + this.Tamdanh * getDirectionMove(),Color.red);
+        RaycastHit2D hit = Physics2D.Raycast(this.transform.position, getDirectionMove(), this.Tamdanh, layerMask);
+        return hit.collider == null;
     }
 
-    private Vector3 getVectorMove(Transform target)
+    private Vector3 getDirectionMove()
     {
-        return new Vector3(target.position.x - this.transform.position.x,
-            target.position.y - this.transform.position.y,
-            target.position.z - this.transform.position.z);
+        return (targetPosition.position - transform.position).normalized;
     }
 }

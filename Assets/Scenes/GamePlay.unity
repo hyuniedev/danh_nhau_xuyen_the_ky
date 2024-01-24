@@ -133,7 +133,7 @@ GameObject:
   m_Component:
   - component: {fileID: 201858764}
   - component: {fileID: 201858763}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Tower
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -297,7 +297,7 @@ GameObject:
   m_Component:
   - component: {fileID: 395589488}
   - component: {fileID: 395589487}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Tower (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -501,7 +501,7 @@ GameObject:
   m_Component:
   - component: {fileID: 622413739}
   - component: {fileID: 622413740}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Square (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -618,7 +618,7 @@ GameObject:
   m_Component:
   - component: {fileID: 974217634}
   - component: {fileID: 974217635}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Square
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -775,7 +775,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   heart: 100
   speed: 1
-  tamdanh: 10
+  tamdanh: 1
   targetPosition: {fileID: 1728665995}
   layerMask:
     serializedVersion: 2
@@ -790,7 +790,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1224156654}
   - component: {fileID: 1224156655}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Square (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1088,7 +1088,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1665350903}
   - component: {fileID: 1665350904}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Square (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1245,7 +1245,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   heart: 100
   speed: 1
-  tamdanh: 2
+  tamdanh: 1
   targetPosition: {fileID: 1042236438}
   layerMask:
     serializedVersion: 2
@@ -1260,7 +1260,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1829294826}
   - component: {fileID: 1829294827}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Square (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1344,7 +1344,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2044348732}
   - component: {fileID: 2044348733}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Square
   m_TagString: Untagged
   m_Icon: {fileID: 0}
