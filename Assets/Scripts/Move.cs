@@ -20,9 +20,10 @@ public class Move : Hero
 
     private void attack()
     {
+        enemy = checkRight();
         if (checkE)
         {
-            enemy.GetComponent<Hero>().Heart(enemy.GetComponent<Hero>().Heart - this.Dame);
+           // enemy.GetComponent<Hero>().Heart(enemy.GetComponent<Hero>().Heart - this.Dame);
         }
         else
         {
