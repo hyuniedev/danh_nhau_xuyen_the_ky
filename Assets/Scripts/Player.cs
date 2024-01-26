@@ -17,7 +17,7 @@ public class Player : MonoBehaviour
     private void Update()
     {
         myCoin.text = "Coin: " + coin;
-    }1
+    }
 
     public static int Coin
     {
