@@ -1,6 +1,7 @@
 ﻿using System;                                
 using UnityEngine;
 using UnityEngine.UI;
+using Random = UnityEngine.Random;
 
 public enum eHero
 {
@@ -31,6 +32,7 @@ public class Player : C_Hero
 
     private void Update()
     {
+        if (Enemy == null) target = posTower;
         Debug.DrawLine(transform.position,transform.position + (Vector3)direc * tamDanh,Color.blue);
         if (currentState != null)
         {
@@ -75,7 +77,7 @@ public class Player : C_Hero
         else
         {
             timer = 0;
-            Enemy.Heart -= this.Dame;
+            Enemy.Heart -= Random.Range(Dame-5,Dame+5);
         }
 
         if (!checkEnemy())
@@ -91,9 +93,22 @@ public class Player : C_Hero
 
     public void Chet()
     {
-        
+        if (this.gameObject.tag.Equals("Player"))
+        {
+            QueueHeroDied.addPlayerDied(this);
+        }
+        else
+        {
+            QueueHeroDied.addEnemyDied(this);
+        }
+        this.gameObject.SetActive(false);
     }
 
+    public void HoiSinh()
+    {
+        this.gameObject.SetActive(true);
+        this.Heart = 100;
+    }
     private bool checkEnemy()
     {
         RaycastHit2D hit = Physics2D.Raycast(transform.position, direc, this.tamDanh, _layerMaskOfEnemy);

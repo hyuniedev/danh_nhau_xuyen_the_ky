@@ -624,6 +624,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 95f31adbf93b06d469be710d194fc738, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  posHoiSinh: {fileID: 2073953264}
+  ParentPlayer: {fileID: 904455812}
+  Pre_Player: {fileID: 7478171012403622291, guid: 39f00e525dee43a40b2c25af365faf77, type: 3}
 --- !u!4 &1058531570
 Transform:
   m_ObjectHideFlags: 0
@@ -631,6 +634,37 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1058531568}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1068749785
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1068749786}
+  m_Layer: 0
+  m_Name: ======================
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1068749786
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1068749785}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
@@ -785,7 +819,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1058531569}
         m_TargetAssemblyTypeName: ButtonController, Assembly-CSharp
-        m_MethodName: MakeNewHero
+        m_MethodName: HoiSinh
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1031,6 +1065,37 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &1664247251
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1664247252}
+  m_Layer: 0
+  m_Name: ======================
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1664247252
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1664247251}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1728665995 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8160762690316113302, guid: 39f00e525dee43a40b2c25af365faf77, type: 3}
@@ -1141,6 +1206,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2531295877894579345, guid: 1a70efd3e1862ad4ea30020e131bce00, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2857953839011552600, guid: 1a70efd3e1862ad4ea30020e131bce00, type: 3}
       propertyPath: m_Name
       value: TowerHero
@@ -1339,6 +1408,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: TowerEnemy
       objectReference: {fileID: 0}
+    - target: {fileID: 7909551242385967039, guid: e78320e797df5ec4683f36e0023f691f, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1414,7 +1487,9 @@ SceneRoots:
   - {fileID: 904455813}
   - {fileID: 691249975830339034}
   - {fileID: 3378322269103139010}
+  - {fileID: 1664247252}
   - {fileID: 1058531570}
   - {fileID: 2073953264}
+  - {fileID: 1068749786}
   - {fileID: 739170513}
   - {fileID: 1342131110}

@@ -1,17 +1,18 @@
-﻿public class StateMove : IState
+﻿public class StateDeath : IState
 {
     public void OnEnter(Player player)
     {
+        player.DungDiChuyen();
         player.DungTanCong();
     }
 
     public void OnExecute(Player player)
     {
-        player.DiChuyen();
+        player.Chet();
     }
 
     public void OnExit(Player player)
     {
-        //player.DungDiChuyen();
+        player.HoiSinh();
     }
 }
