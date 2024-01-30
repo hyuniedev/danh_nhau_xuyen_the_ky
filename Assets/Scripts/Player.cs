@@ -21,16 +21,17 @@ public class Player : C_Hero
     private IState currentState;
     private void Start()
     {
-        direc = _layerMaskOfEnemy.Equals("Player") ? Vector2.right : Vector2.left;
+        direc = gameObject.tag.Equals("Player") ? Vector2.right : Vector2.left;
         target = posTower;
-        if (ViTri == eHero.Top) tamDanh = 2;
-        else if (ViTri == eHero.Ad) tamDanh = 5;
-        else if (ViTri == eHero.Monster) tamDanh = 7;
+        if (ViTri == eHero.Top) tamDanh = 3;
+        else if (ViTri == eHero.Ad) tamDanh = 7;
+        else if (ViTri == eHero.Monster) tamDanh = 10;
         changeState(new StateMove());
     }
 
     private void Update()
     {
+        Debug.DrawLine(transform.position,transform.position + (Vector3)direc * tamDanh,Color.blue);
         if (currentState != null)
         {
             currentState.OnExecute(this);
