@@ -94,7 +94,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7118806034229113475}
   - component: {fileID: 5911754955506755807}
-  - component: {fileID: 5832487115671842454}
+  - component: {fileID: 27808543217766722}
   m_Layer: 6
   m_Name: Enemy
   m_TagString: Enemy
@@ -153,7 +153,7 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: 0}
   m_Size: {x: 1, y: 2}
   m_Direction: 0
---- !u!114 &5832487115671842454
+--- !u!114 &27808543217766722
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -162,15 +162,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 8623062625857128230}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 034337f5772eeeb40af92944c0ca7366, type: 3}
+  m_Script: {fileID: 11500000, guid: a10efe7b249c4f51a826f5e4eca35247, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   heart: 100
-  speed: 0.5
-  tamdanh: 1
-  dame: 10
-  speedMakeDame: 8
-  targetPosition: {fileID: 7574492651115459483, guid: 1a70efd3e1862ad4ea30020e131bce00, type: 3}
-  layerMask:
+  speedMove: 1
+  speedAttack: 10
+  dame: 5
+  ViTri: 0
+  _layerMaskOfEnemy:
     serializedVersion: 2
     m_Bits: 8
+  posTower: {fileID: 7574492651115459483, guid: 1a70efd3e1862ad4ea30020e131bce00, type: 3}

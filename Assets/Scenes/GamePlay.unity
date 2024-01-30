@@ -485,7 +485,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 904455813}
-  - component: {fileID: 904455814}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -512,19 +511,6 @@ Transform:
   - {fileID: 1888389584}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &904455814
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 904455812}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a10efe7b249c4f51a826f5e4eca35247, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  myCoin: {fileID: 972691823}
 --- !u!1 &972691821
 GameObject:
   m_ObjectHideFlags: 0
@@ -638,9 +624,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 95f31adbf93b06d469be710d194fc738, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  HeroMove: {fileID: 7478171012403622291, guid: 39f00e525dee43a40b2c25af365faf77, type: 3}
-  DiemHoiSinh: {fileID: 2073953264}
-  parentHero: {fileID: 904455813}
 --- !u!4 &1058531570
 Transform:
   m_ObjectHideFlags: 0
