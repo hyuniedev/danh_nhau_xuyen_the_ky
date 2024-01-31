@@ -46,7 +46,6 @@ public class Player : C_Hero
         {
             currentState.OnExit(this);
         }
-
         currentState = newState;
         if (currentState != null)
         {
