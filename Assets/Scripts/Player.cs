@@ -22,11 +22,15 @@ public class Player : C_Hero
     private IState currentState;
     private void Start()
     {
+        //set huong di chuyen
         direc = gameObject.tag.Equals("Player") ? Vector2.right : Vector2.left;
+        //set first target
         target = posTower;
+        //set tam danh
         if (ViTri == eHero.Top) tamDanh = 3;
         else if (ViTri == eHero.Ad) tamDanh = 7;
         else if (ViTri == eHero.Monster) tamDanh = 10;
+        //set state begin
         changeState(new StateMove());
     }
 
@@ -56,7 +60,7 @@ public class Player : C_Hero
     public void DiChuyen()
     {
         transform.position =
-            Vector3.MoveTowards(transform.position, target.position, this.SpeedMove * Time.fixedDeltaTime);
+            Vector3.MoveTowards(transform.position, target.position, this.SpeedAttack * Time.deltaTime);
         if (checkEnemy())
         {
             changeState(new StateAttack());
