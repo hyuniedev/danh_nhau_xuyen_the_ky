@@ -264,7 +264,7 @@ MonoBehaviour:
   heart: 100
   dame: 10
   speedAttack: 5
-  radius: 12
+  radius: 6
   _layerMask:
     serializedVersion: 2
     m_Bits: 0

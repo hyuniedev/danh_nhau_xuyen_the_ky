@@ -1226,6 +1226,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 579901448074901691, guid: 1a70efd3e1862ad4ea30020e131bce00, type: 3}
+      propertyPath: radius
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 2531295877894579345, guid: 1a70efd3e1862ad4ea30020e131bce00, type: 3}
       propertyPath: m_Offset.y
       value: 0.99
@@ -1303,6 +1307,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -975458795432932933, guid: e78320e797df5ec4683f36e0023f691f, type: 3}
+      propertyPath: radius
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 412278294029409371, guid: e78320e797df5ec4683f36e0023f691f, type: 3}
       propertyPath: m_LocalPosition.y
       value: 1
