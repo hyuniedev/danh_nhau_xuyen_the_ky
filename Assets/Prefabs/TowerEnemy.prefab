@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 412278294029409371}
   - component: {fileID: 5713848202187469771}
-  m_Layer: 6
+  m_Layer: 7
   m_Name: Square
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -94,7 +94,8 @@ GameObject:
   m_Component:
   - component: {fileID: 2192594647381932800}
   - component: {fileID: 7909551242385967039}
-  m_Layer: 6
+  - component: {fileID: -975458795432932933}
+  m_Layer: 7
   m_Name: TowerEnemy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -164,6 +165,25 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.4445963, y: 4.0436196}
   m_EdgeRadius: 0
+--- !u!114 &-975458795432932933
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7296304562711918757}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 09cab0b730a799f4abc329f9cba7fe68, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  heart: 100
+  dame: 10
+  speedAttack: 3
+  radius: 10
+  _layerMask:
+    serializedVersion: 2
+    m_Bits: 0
 --- !u!1 &7439009865598811255
 GameObject:
   m_ObjectHideFlags: 0
@@ -174,7 +194,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3830413544552733846}
   - component: {fileID: 808278968711169893}
-  m_Layer: 6
+  m_Layer: 7
   m_Name: Square (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -258,7 +278,7 @@ GameObject:
   m_Component:
   - component: {fileID: 625151706018765749}
   - component: {fileID: 3995761776039121505}
-  m_Layer: 6
+  m_Layer: 7
   m_Name: Square (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}

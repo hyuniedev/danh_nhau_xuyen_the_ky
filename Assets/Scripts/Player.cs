@@ -38,6 +38,10 @@ public class Player : C_Hero
     {
         if (Enemy == null) target = posTower;
         Debug.DrawLine(transform.position,transform.position + (Vector3)direc * tamDanh,Color.blue);
+        if (this.Heart <= 0 && currentState != null)
+        {
+            changeState(new StateDeath());
+        }
         if (currentState != null)
         {
             currentState.OnExecute(this);
@@ -69,7 +73,11 @@ public class Player : C_Hero
 
     public void DungDiChuyen()
     {
-        target = Enemy.transform;
+        if (Enemy != null)
+        {
+            target = Enemy.transform;
+        }
+        
     }
     public void TanCong()
     {
