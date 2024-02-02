@@ -64,7 +64,7 @@ public class Player : C_Hero
     public void DiChuyen()
     {
         transform.position =
-            Vector3.MoveTowards(transform.position, target.position, this.SpeedAttack * Time.deltaTime);
+            Vector3.MoveTowards(transform.position, target.position, this.SpeedMove * Time.deltaTime);
         if (checkEnemy())
         {
             changeState(new StateAttack());
