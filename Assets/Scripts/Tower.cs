@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class Tower : MonoBehaviour
 {
@@ -12,6 +13,7 @@ public class Tower : MonoBehaviour
     [SerializeField] private LayerMask _layerMask;
     private GameObject targetEnemy;
     private float timer = 0;
+    private Collider2D[] dsEnemy;
 
     private void Start()
     {
@@ -21,10 +23,17 @@ public class Tower : MonoBehaviour
 
     private void Update()
     {
-        checkEnemy();
+        dsEnemy = checkEnemy();
         if (targetEnemy != null)
         {
             Attack();
+        }
+        else
+        {
+            if (dsEnemy.Length > 0)
+            {
+                targetEnemy = dsEnemy[0].gameObject;
+            }
         }
     }
 
@@ -37,7 +46,11 @@ public class Tower : MonoBehaviour
         else
         {
             timer = 0;
-            targetEnemy.GetComponent<Player>().Heart -= this.dame;
+            targetEnemy.GetComponent<Player>().Heart -= Random.Range(this.dame-5,this.dame+5);
+            if (targetEnemy.GetComponent<Player>().Heart <= 0)
+            {
+                targetEnemy = null;
+            }
         }
     }
     public float Heart
@@ -45,14 +58,9 @@ public class Tower : MonoBehaviour
         get => heart;
         set => heart = value;
     }
-    private void checkEnemy()
+    private Collider2D[] checkEnemy()
     {
-        Collider2D[] enemys = Physics2D.OverlapCircleAll(transform.position, radius, _layerMask);
-        if (targetEnemy == null && enemys.Length > 0)
-        {
-            Debug.Log("MAMA");
-            targetEnemy = enemys[0].gameObject;
-        }
+        return Physics2D.OverlapCircleAll(transform.position, radius, _layerMask);
     }
 
     private void OnDrawGizmos()
