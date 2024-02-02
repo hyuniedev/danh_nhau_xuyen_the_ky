@@ -1230,6 +1230,10 @@ PrefabInstance:
       propertyPath: radius
       value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: 579901448074901691, guid: 1a70efd3e1862ad4ea30020e131bce00, type: 3}
+      propertyPath: speedAttack
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 2531295877894579345, guid: 1a70efd3e1862ad4ea30020e131bce00, type: 3}
       propertyPath: m_Offset.y
       value: 0.99

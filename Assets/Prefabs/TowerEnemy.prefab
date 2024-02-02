@@ -183,7 +183,7 @@ MonoBehaviour:
   radius: 6
   _layerMask:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 8
 --- !u!1 &7439009865598811255
 GameObject:
   m_ObjectHideFlags: 0
