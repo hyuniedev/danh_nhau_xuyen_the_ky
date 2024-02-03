@@ -77,7 +77,6 @@ public class Player : C_Hero
         {
             target = Enemy.transform;
         }
-        
     }
     public void TanCong()
     {
