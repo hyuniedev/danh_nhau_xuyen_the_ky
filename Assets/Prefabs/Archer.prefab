@@ -86,7 +86,7 @@ MonoBehaviour:
   speedMove: 2
   speedAttack: 3
   dame: 5
-  ViTri: 1
+  viTri: 1
   _layerMaskOfEnemy:
     serializedVersion: 2
     m_Bits: 64

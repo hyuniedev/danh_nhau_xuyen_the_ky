@@ -6,6 +6,7 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     private static int coin;
+    public static QueueHeroDied _queueHeroDied = new QueueHeroDied();
 
     private void Start()
     {

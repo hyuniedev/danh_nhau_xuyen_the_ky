@@ -5,7 +5,6 @@ using Random = UnityEngine.Random;
 
 public class Player : C_Hero
 {
-    [SerializeField] private EHero ViTri;
     [SerializeField] private LayerMask _layerMaskOfEnemy;
     private float tamDanh;
     [Header("Mục tiêu")] [SerializeField] private Transform posTower;
@@ -102,11 +101,11 @@ public class Player : C_Hero
     {
         if (this.gameObject.tag.Equals("Player"))
         {
-            QueueHeroDied.addPlayerDied(this);
+            GameManager._queueHeroDied.addPlayerDied(this);
         }
         else
         {
-            QueueHeroDied.addEnemyDied(this);
+            GameManager._queueHeroDied.addEnemyDied(this);
         }
         this.gameObject.SetActive(false);
     }

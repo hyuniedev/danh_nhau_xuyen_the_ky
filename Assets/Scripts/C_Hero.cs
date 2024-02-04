@@ -7,6 +7,7 @@ public class C_Hero : MonoBehaviour
     [SerializeField] private float speedMove;
     [SerializeField] private float speedAttack;
     [SerializeField] private float dame;
+    [SerializeField] private EHero viTri;
 
     public float Heart
     {
@@ -31,4 +32,6 @@ public class C_Hero : MonoBehaviour
         get => dame;
         set => dame = value;
     }
+
+    public EHero ViTri => viTri;
 }
