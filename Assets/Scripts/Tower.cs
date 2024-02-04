@@ -2,27 +2,29 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using Random = UnityEngine.Random;
 
-public class Tower : MonoBehaviour
+public class Tower : C_Hero
 {
-    [SerializeField] private float heart = 100;
-    [SerializeField] private float dame;
-    [SerializeField] private float speedAttack;
     [SerializeField] private float radius = 5;
     [SerializeField] private LayerMask _layerMask;
+    [SerializeField] private Slider _sliderHeart;
     private GameObject targetEnemy;
     private float timer = 0;
     private Collider2D[] dsEnemy;
 
     private void Start()
     {
-        timer = speedAttack;
+        _sliderHeart.maxValue = this.Heart;
+        SpeedMove = 0;
+        timer = SpeedAttack;
         targetEnemy = null;
     }
 
     private void Update()
     {
+        _sliderHeart.value = Heart;
         dsEnemy = checkEnemy();
         if (targetEnemy != null)
         {
@@ -39,24 +41,19 @@ public class Tower : MonoBehaviour
 
     private void Attack()
     {
-        if (timer < speedAttack)
+        if (timer < SpeedAttack)
         {
             timer += Time.deltaTime;
         }
         else
         {
             timer = 0;
-            targetEnemy.GetComponent<Player>().Heart -= Random.Range(this.dame-5,this.dame+5);
+            targetEnemy.GetComponent<Player>().Heart -= Random.Range(this.Dame-5,this.Dame+5);
             if (targetEnemy.GetComponent<Player>().Heart <= 0)
             {
                 targetEnemy = null;
             }
         }
-    }
-    public float Heart
-    {
-        get => heart;
-        set => heart = value;
     }
     private Collider2D[] checkEnemy()
     {

@@ -15,6 +15,7 @@ public class Player : C_Hero
     [SerializeField] private LayerMask _layerMaskOfEnemy;
     private float tamDanh;
     [Header("Mục tiêu")] [SerializeField] private Transform posTower;
+    [SerializeField] private Slider _sliderHeart;
     private Transform target;
     private Vector2 direc;
     private C_Hero Enemy;
@@ -22,20 +23,22 @@ public class Player : C_Hero
     private IState currentState;
     private void Start()
     {
+        _sliderHeart.maxValue = Heart;
         //set huong di chuyen
         direc = gameObject.tag.Equals("Player") ? Vector2.right : Vector2.left;
         //set first target
         target = posTower;
         //set tam danh
-        if (ViTri == eHero.Top) tamDanh = 3;
-        else if (ViTri == eHero.Ad) tamDanh = 7;
-        else if (ViTri == eHero.Monster) tamDanh = 10;
+        if (ViTri == eHero.Top) tamDanh = 1;
+        else if (ViTri == eHero.Ad) tamDanh = 2;
+        else if (ViTri == eHero.Monster) tamDanh = 3;
         //set state begin
         changeState(new StateMove());
     }
 
     private void Update()
     {
+        _sliderHeart.value = Heart;
         if (Enemy == null) target = posTower;
         Debug.DrawLine(transform.position,transform.position + (Vector3)direc * tamDanh,Color.blue);
         if (this.Heart <= 0 && currentState != null)
