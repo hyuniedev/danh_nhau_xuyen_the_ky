@@ -22,9 +22,21 @@ public class Player : C_Hero
         //set first target
         target = posTower;
         //set tam danh
-        if (ViTri == EHero.Top) tamDanh = 1;
-        else if (ViTri == EHero.Ad) tamDanh = 2;
-        else if (ViTri == EHero.Monster) tamDanh = 3;
+        if (ViTri == EHero.Top)
+        {
+            tamDanh = 1;
+            Gia = 5;
+        }
+        else if (ViTri == EHero.Ad)
+        {
+            tamDanh = 2.5f;
+            Gia = 7;
+        }
+        else if (ViTri == EHero.Monster)
+        {
+            tamDanh = 1.2f;
+            Gia = 15;
+        }
         //set state begin
         changeState(new StateMove());
     }
@@ -105,6 +117,7 @@ public class Player : C_Hero
         }
         else
         {
+            GameManager.IncCoin(this.Gia);
             GameManager._queueHeroDied.addEnemyDied(this);
         }
         this.gameObject.SetActive(false);

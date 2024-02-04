@@ -8,6 +8,13 @@ public class C_Hero : MonoBehaviour
     [SerializeField] private float speedAttack;
     [SerializeField] private float dame;
     [SerializeField] private EHero viTri;
+    private int gia;
+
+    public int Gia
+    {
+        get => gia;
+        set => gia = value;
+    }
 
     public float Heart
     {
