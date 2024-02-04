@@ -7,7 +7,7 @@ public class ButtonController : MonoBehaviour
     [SerializeField] private Transform posHoiSinh;
     [SerializeField] private GameObject ParentPlayer;
     [SerializeField] private GameObject Pre_Player;
-    public void HoiSinh()
+    public void Instan_Warrior()
     {
         if (QueueHeroDied.getNumPlayerDied() > 0)
         {

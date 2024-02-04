@@ -296,7 +296,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   heart: 100
   speedMove: 0
-  speedAttack: 5
+  speedAttack: 1
   dame: 10
   radius: 6
   _layerMask:

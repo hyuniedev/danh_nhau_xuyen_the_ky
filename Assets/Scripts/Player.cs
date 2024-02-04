@@ -3,15 +3,9 @@ using UnityEngine;
 using UnityEngine.UI;
 using Random = UnityEngine.Random;
 
-public enum eHero
-{
-    Top,
-    Ad,
-    Monster
-}
 public class Player : C_Hero
 {
-    [SerializeField] private eHero ViTri;
+    [SerializeField] private EHero ViTri;
     [SerializeField] private LayerMask _layerMaskOfEnemy;
     private float tamDanh;
     [Header("Mục tiêu")] [SerializeField] private Transform posTower;
@@ -29,9 +23,9 @@ public class Player : C_Hero
         //set first target
         target = posTower;
         //set tam danh
-        if (ViTri == eHero.Top) tamDanh = 1;
-        else if (ViTri == eHero.Ad) tamDanh = 2;
-        else if (ViTri == eHero.Monster) tamDanh = 3;
+        if (ViTri == EHero.Top) tamDanh = 1;
+        else if (ViTri == EHero.Ad) tamDanh = 2;
+        else if (ViTri == EHero.Monster) tamDanh = 3;
         //set state begin
         changeState(new StateMove());
     }
