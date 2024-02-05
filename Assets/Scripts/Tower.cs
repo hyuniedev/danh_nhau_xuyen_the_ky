@@ -60,8 +60,8 @@ public class Tower : C_Hero
         return Physics2D.OverlapCircleAll(transform.position, radius, _layerMask);
     }
 
-    private void OnDrawGizmos()
-    {
-        Gizmos.DrawWireSphere(transform.position,this.radius);
-    }
+    // private void OnDrawGizmos()
+    // {
+    //     Gizmos.DrawWireSphere(transform.position,this.radius);
+    // }
 }
