@@ -128,17 +128,35 @@ public class Player : C_Hero
         this.gameObject.SetActive(true);
         this.Heart = 100;
     }
+    // private bool checkEnemy()
+    // {
+    //     RaycastHit2D hit = Physics2D.Raycast(transform.position, direc, this.tamDanh, _layerMaskOfEnemy);
+    //     if (hit.collider != null)
+    //     {
+    //         Enemy = hit.collider.gameObject.GetComponent<C_Hero>();
+    //     }
+    //     else
+    //     {
+    //         Enemy = null;
+    //     }
+    //     return hit.collider != null;
+    // }
     private bool checkEnemy()
     {
-        RaycastHit2D hit = Physics2D.Raycast(transform.position, direc, this.tamDanh, _layerMaskOfEnemy);
-        if (hit.collider != null)
+        Collider2D[] arrEnemy = Physics2D.OverlapCircleAll(transform.position, tamDanh, _layerMaskOfEnemy);
+        if (arrEnemy.Length != 0)
         {
-            Enemy = hit.collider.gameObject.GetComponent<C_Hero>();
+            Enemy = arrEnemy[0].gameObject.GetComponent<C_Hero>();
         }
         else
         {
             Enemy = null;
         }
-        return hit.collider != null;
+        return arrEnemy.Length != 0;
+    }
+
+    private void OnDrawGizmos()
+    {
+        Gizmos.DrawWireSphere(transform.position,tamDanh);
     }
 }
