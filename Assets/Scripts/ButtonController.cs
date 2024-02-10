@@ -1,10 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class ButtonController : MonoBehaviour
 {
-    [SerializeField] private Transform posHoiSinh;
+    [SerializeField] private Transform[] Arr_posHoiSinh;
     [SerializeField] private GameObject ParentPlayer;
     [SerializeField] private GameObject[] Pre_Player;
     public void Instan_Hero(int index)
@@ -18,13 +19,18 @@ public class ButtonController : MonoBehaviour
         {
             Player tmp = GameManager._queueHeroDied.getPlayerDied(index);
             tmp.changeState(new StateMove());
-            tmp.transform.position = posHoiSinh.position;
+            tmp.transform.position = posHoiSinh().position;
             GameManager.Coin -= fee;
         }
         else
         {
-            Instantiate(Pre_Player[index], posHoiSinh.position, this.posHoiSinh.rotation, ParentPlayer.transform);
+            Instantiate(Pre_Player[index], posHoiSinh().position, this.posHoiSinh().rotation, ParentPlayer.transform);
             GameManager.Coin -= fee;
         }
+    }
+
+    private Transform posHoiSinh()
+    {
+        return Arr_posHoiSinh[Random.Range(0, Arr_posHoiSinh.Length)];
     }
 }
