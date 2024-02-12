@@ -9,6 +9,10 @@ public class GameManager : MonoBehaviour
     [SerializeField] private Slider slideCoin;
     [SerializeField] private float maxTime;
     [SerializeField] private Text txtCoin;
+    [Header("Born Enemy")]
+    [SerializeField] private Transform[] E_Arr_posHoiSinh;
+    [SerializeField] private GameObject E_ParentEnemy;
+    [SerializeField] private GameObject[] Pre_Enemy;
     private float timer;
     private static int coin;
     public static QueueHeroDied _queueHeroDied = new QueueHeroDied();
@@ -26,6 +30,10 @@ public class GameManager : MonoBehaviour
         txtCoin.text = "Coin : " + coin;
     }
 
+    private void BornEnemySystem()
+    {
+        
+    }
     private void IncCoinPerTime()
     {
         if (timer <= maxTime)
