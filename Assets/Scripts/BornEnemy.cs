@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using Random = UnityEngine.Random;
 public class BornEnemy : MonoBehaviour
 {
     [SerializeField] private Transform[] posBorn;
@@ -9,15 +9,9 @@ public class BornEnemy : MonoBehaviour
     [SerializeField] private GameObject[] pre_Enemy;
 
     private GameObject pre_Select;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
-    // Update is called once per frame
-    void Update()
+    private void randomSelectedEnemy()
     {
-        
+        pre_Select = pre_Enemy[Random.Range(0, pre_Enemy.Length)];
     }
 }
