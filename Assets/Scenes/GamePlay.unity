@@ -1068,6 +1068,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1054515980}
   - component: {fileID: 1054515979}
+  - component: {fileID: 1054515981}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -1090,6 +1091,9 @@ MonoBehaviour:
   slideCoin: {fileID: 1662447231}
   maxTime: 2
   txtCoin: {fileID: 972691823}
+  E_Arr_posHoiSinh: []
+  E_ParentEnemy: {fileID: 0}
+  Pre_Enemy: []
 --- !u!4 &1054515980
 Transform:
   m_ObjectHideFlags: 0
@@ -1105,6 +1109,26 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1054515981
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1054515978}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 230e9b0031516d745ad04252a3e8468d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  posBorn:
+  - {fileID: 326813159}
+  - {fileID: 543077951}
+  - {fileID: 433394041}
+  pre_Enemy:
+  - {fileID: 8623062625857128230, guid: f7dcc847816eb43418dcbf6ec88e3bea, type: 3}
+  - {fileID: 8623062625857128230, guid: f0cc3570300750d4f9df053e96c23335, type: 3}
+  - {fileID: 8623062625857128230, guid: 1c017add7ab112846a049cf9a66fdb42, type: 3}
 --- !u!1 &1058531568
 GameObject:
   m_ObjectHideFlags: 0
