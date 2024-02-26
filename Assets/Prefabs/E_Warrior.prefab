@@ -168,9 +168,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   heart: 100
   speedMove: 2
-  speedAttack: 3
-  dame: 5
-  ViTri: 0
+  speedAttack: 5
+  dame: 4
+  viTri: 0
   _layerMaskOfEnemy:
     serializedVersion: 2
     m_Bits: 8

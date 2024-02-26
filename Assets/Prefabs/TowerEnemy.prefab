@@ -210,10 +210,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 09cab0b730a799f4abc329f9cba7fe68, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  heart: 100
+  heart: 5000
   speedMove: 0
   speedAttack: 1
-  dame: 10
+  dame: 20
+  viTri: 0
   radius: 6
   _layerMask:
     serializedVersion: 2

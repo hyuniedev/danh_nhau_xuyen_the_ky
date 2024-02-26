@@ -82,10 +82,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a10efe7b249c4f51a826f5e4eca35247, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  heart: 100
+  heart: 250
   speedMove: 2
-  speedAttack: 3
-  dame: 5
+  speedAttack: 6
+  dame: 20
   viTri: 2
   _layerMaskOfEnemy:
     serializedVersion: 2
