@@ -2,14 +2,25 @@
 
 public class C_Hero : MonoBehaviour
 {
-    [Header("Thuộc tính")]
-    [SerializeField] private float heart;
-    [SerializeField] private float speedMove;
-    [SerializeField] private float speedAttack;
-    [SerializeField] private float dame;
+    private int level;
+    private float heart;
+    private float speedMove;
+    private float speedAttack;
+    private float rangeAttack;
+    private float dame;
     [SerializeField] private EHero viTri;
     private int gia;
 
+    public float RangeAttack
+    {
+        get => rangeAttack;
+        set => rangeAttack = value;
+    }
+    public int Level
+    {
+        get => level;
+        set => level = value;
+    }
     public int Gia
     {
         get => gia;

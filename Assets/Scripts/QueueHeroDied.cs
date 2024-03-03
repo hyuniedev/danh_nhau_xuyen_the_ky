@@ -48,13 +48,13 @@ public class QueueHeroDied
 
     public void addPlayerDied(Player player)
     {
-        if (player.ViTri == EHero.Top)
+        if (player.ViTri == EHero.Warrior)
         {
             dsPlayerDied[0].Add(player);
-        }else if (player.ViTri == EHero.Ad)
+        }else if (player.ViTri == EHero.Archer)
         {
             dsPlayerDied[1].Add(player);
-        }else if (player.ViTri == EHero.Monster)
+        }else if (player.ViTri == EHero.Boss)
         {
             dsPlayerDied[2].Add(player);
         }
@@ -62,13 +62,14 @@ public class QueueHeroDied
 
     public void addEnemyDied(Player player)
     {
-        if (player.ViTri == EHero.Top)
+        GameManager.IncCoin(player.Gia);
+        if (player.ViTri == EHero.Warrior)
         {
             dsEnemyDied[0].Add(player);
-        }else if (player.ViTri == EHero.Ad)
+        }else if (player.ViTri == EHero.Archer)
         {
             dsEnemyDied[1].Add(player);
-        }else if (player.ViTri == EHero.Monster)
+        }else if (player.ViTri == EHero.Boss)
         {
             dsEnemyDied[2].Add(player);
         }
@@ -80,6 +81,7 @@ public class QueueHeroDied
         {
             Player tmp = dsPlayerDied[indexEHero][0];
             dsPlayerDied[indexEHero].RemoveAt(0);
+            tmp.Heart = Data.maxHeart(tmp);
             return tmp;
         }
         else
@@ -94,6 +96,7 @@ public class QueueHeroDied
         {
             Player tmp = dsEnemyDied[indexEHero][0];
             dsEnemyDied[indexEHero].RemoveAt(0);
+            tmp.Heart = Data.maxHeart(tmp);
             return tmp;
         }
         else

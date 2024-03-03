@@ -4,12 +4,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using Random = UnityEngine.Random;
 public class BornEnemy : MonoBehaviour
-
 {
     [SerializeField] private Transform[] posBorn;
-
     [SerializeField] private GameObject[] pre_Enemy;
-    
     [SerializeField] private Transform parent_Enemy;
     private float timeBorn = 2;
 

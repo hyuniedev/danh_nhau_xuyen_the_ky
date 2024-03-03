@@ -6,7 +6,6 @@ using Random = UnityEngine.Random;
 public class Player : C_Hero
 {
     [SerializeField] private LayerMask _layerMaskOfEnemy;
-    private float tamDanh;
     [Header("Mục tiêu")] [SerializeField] private Transform posTower;
     [SerializeField] private Slider _sliderHeart;
     private Transform target;
@@ -14,38 +13,25 @@ public class Player : C_Hero
     private C_Hero Enemy;
     private float timer;
     private IState currentState;
+
     private void Start()
     {
+        this.Level = 1;
+        Data.LoadData_Hero(this);
         _sliderHeart.maxValue = Heart;
         //set huong di chuyen
         direc = gameObject.tag.Equals("Player") ? Vector2.right : Vector2.left;
         //set first target
         target = posTower;
-        //set tam danh
-        if (ViTri == EHero.Top)
-        {
-            tamDanh = 1;
-            Gia = 5;
-        }
-        else if (ViTri == EHero.Ad)
-        {
-            tamDanh = 2.5f;
-            Gia = 7;
-        }
-        else if (ViTri == EHero.Monster)
-        {
-            tamDanh = 1.2f;
-            Gia = 15;
-        }
         //set state begin
         changeState(new StateMove());
     }
-
+    
     private void Update()
     {
         _sliderHeart.value = Heart;
         if (Enemy == null) target = posTower;
-        Debug.DrawLine(transform.position,transform.position + (Vector3)direc * tamDanh,Color.blue);
+        Debug.DrawLine(transform.position,transform.position + (Vector3)direc * RangeAttack,Color.blue);
         if (this.Heart <= 0 && currentState != null)
         {
             changeState(new StateDeath());
@@ -115,6 +101,7 @@ public class Player : C_Hero
         {
             GameManager._queueHeroDied.addPlayerDied(this);
         }
+        // is Enemy died
         else
         {
             GameManager.IncCoin(this.Gia);
@@ -126,7 +113,6 @@ public class Player : C_Hero
     public void HoiSinh()
     {
         this.gameObject.SetActive(true);
-        this.Heart = 100;
     }
     // private bool checkEnemy()
     // {
@@ -143,7 +129,7 @@ public class Player : C_Hero
     // }
     private bool checkEnemy()
     {
-        Collider2D[] arrEnemy = Physics2D.OverlapCircleAll(transform.position, tamDanh, _layerMaskOfEnemy);
+        Collider2D[] arrEnemy = Physics2D.OverlapCircleAll(transform.position, RangeAttack, _layerMaskOfEnemy);
         if (arrEnemy.Length != 0)
         {
             Enemy = arrEnemy[0].gameObject.GetComponent<C_Hero>();
@@ -157,6 +143,6 @@ public class Player : C_Hero
 
     private void OnDrawGizmos()
     {
-        Gizmos.DrawWireSphere(transform.position,tamDanh);
+        Gizmos.DrawWireSphere(transform.position,RangeAttack);
     }
 }
