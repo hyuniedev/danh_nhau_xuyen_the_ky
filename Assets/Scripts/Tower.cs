@@ -8,7 +8,6 @@ using Random = UnityEngine.Random;
 
 public class Tower : C_Hero
 {
-    [SerializeField] private float radius = 5;
     [SerializeField] private LayerMask _layerMask;
     [SerializeField] private Slider _sliderHeart;
     private GameObject targetEnemy;
@@ -17,8 +16,8 @@ public class Tower : C_Hero
 
     private void Start()
     {
-        _sliderHeart.maxValue = this.Heart;
-        SpeedMove = 0;
+        Data.LoadData_Tower(this);
+        _sliderHeart.maxValue = Heart;
         timer = SpeedAttack;
         targetEnemy = null;
     }
@@ -54,15 +53,10 @@ public class Tower : C_Hero
             {
                 targetEnemy = null;
             }
-        }
+        }   
     }
     private Collider2D[] checkEnemy()
     {
-        return Physics2D.OverlapCircleAll(transform.position, radius, _layerMask);
+        return Physics2D.OverlapCircleAll(transform.position, RangeAttack, _layerMask);
     }
-
-    // private void OnDrawGizmos()
-    // {
-    //     Gizmos.DrawWireSphere(transform.position,this.radius);
-    // }
 }

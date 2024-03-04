@@ -34,6 +34,15 @@ public class Data
         // level 3
         new List<float> { 55, 2.3f, 5, 1.2f, 22, 20 },
     };
+    
+    // Tower
+    // Heart - Speed Attack - Range Attack - Dame
+    private static List<List<float>> dataTower = new List<List<float>>
+    {
+        new List<float> { 1000, 3, 6, 40 },
+        new List<float> { 1200, 2.5f, 6, 45 },
+        new List<float> { 1500, 2, 5.5f, 50 }
+    };
 
     public static void LoadData_Hero(Player player)
     {
@@ -72,5 +81,14 @@ public class Data
         {
             return dataBoss[player.Level][0];
         }
+    }
+
+    public static void LoadData_Tower(Tower tower)  
+    {
+        tower.Heart = dataTower[tower.Level][0];
+        tower.SpeedMove = 0;
+        tower.SpeedAttack = dataTower[tower.Level][1];
+        tower.RangeAttack = dataTower[tower.Level][2];
+        tower.Dame = dataTower[tower.Level][3];
     }
 }
