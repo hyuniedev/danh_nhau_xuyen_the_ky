@@ -59,4 +59,9 @@ public class Tower : C_Hero
     {
         return Physics2D.OverlapCircleAll(transform.position, RangeAttack, _layerMask);
     }
+
+    private void OnDrawGizmos()
+    {
+        Gizmos.DrawWireSphere(this.transform.position,RangeAttack);
+    }
 }

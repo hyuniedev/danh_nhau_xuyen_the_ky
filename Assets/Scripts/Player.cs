@@ -143,6 +143,6 @@ public class Player : C_Hero
 
     private void OnDrawGizmos()
     {
-        Gizmos.DrawWireSphere(transform.position,RangeAttack);
+        Gizmos.DrawWireSphere(transform.position,this.RangeAttack);
     }
 }

@@ -68,7 +68,7 @@ CapsuleCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
-  m_Size: {x: 1, y: 2}
+  m_Size: {x: 0.5, y: 1}
   m_Direction: 0
 --- !u!114 &5962901345390544952
 MonoBehaviour:
@@ -82,10 +82,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a10efe7b249c4f51a826f5e4eca35247, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  heart: 50
-  speedMove: 1.5
-  speedAttack: 4
-  dame: 10
   viTri: 1
   _layerMaskOfEnemy:
     serializedVersion: 2
@@ -119,7 +115,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 8160762690316113302}
@@ -190,11 +186,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6639419195471280915, guid: ea520f4c02eb2694381a6a6459a35f34, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.015
+      value: 0.007
       objectReference: {fileID: 0}
     - target: {fileID: 6639419195471280915, guid: ea520f4c02eb2694381a6a6459a35f34, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.01
+      value: 0.007
       objectReference: {fileID: 0}
     - target: {fileID: 6639419195471280915, guid: ea520f4c02eb2694381a6a6459a35f34, type: 3}
       propertyPath: m_LocalPosition.x
@@ -202,7 +198,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6639419195471280915, guid: ea520f4c02eb2694381a6a6459a35f34, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.2
+      value: 0.7
       objectReference: {fileID: 0}
     - target: {fileID: 6639419195471280915, guid: ea520f4c02eb2694381a6a6459a35f34, type: 3}
       propertyPath: m_LocalPosition.z
