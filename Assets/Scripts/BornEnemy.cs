@@ -26,13 +26,13 @@ public class BornEnemy : MonoBehaviour
         return pre_Enemy[Random.Range(0, pre_Enemy.Length)];
     }
 
-    private Transform randomTransformBornEnemy()
+    private Vector3 randomTransformBornEnemy()
     {
-        return posBorn[Random.Range(0, posBorn.Length)];
+        return new Vector3(posBorn[0].position.x, Random.Range(posBorn[0].position.y, posBorn[1].position.y), 0);
     }
 
     private void InstanRandomPosition()
     {
-        Instantiate(randomSelectedEnemy(), randomTransformBornEnemy().position, transform.rotation, parent_Enemy);
+        Instantiate(randomSelectedEnemy(), randomTransformBornEnemy(), transform.rotation, parent_Enemy);
     }
 }

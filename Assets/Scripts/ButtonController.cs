@@ -19,18 +19,18 @@ public class ButtonController : MonoBehaviour
         {
             Player tmp = GameManager._queueHeroDied.getPlayerDied(index);
             tmp.changeState(new StateMove());
-            tmp.transform.position = posHoiSinh().position;
+            tmp.transform.position = posHoiSinh();
             GameManager.Coin -= fee;
         }
         else
         {
-            Instantiate(Pre_Player[index], posHoiSinh().position, this.posHoiSinh().rotation, ParentPlayer.transform);
+            Instantiate(Pre_Player[index], posHoiSinh(), this.transform.rotation, ParentPlayer.transform);
             GameManager.Coin -= fee;
         }
     }
 
-    private Transform posHoiSinh()
+    private Vector3 posHoiSinh()
     {
-        return Arr_posHoiSinh[Random.Range(0, Arr_posHoiSinh.Length)];
+        return new Vector3(Arr_posHoiSinh[0].position.x,Random.Range(Arr_posHoiSinh[0].position.y,Arr_posHoiSinh[1].position.y),0);
     }
 }
