@@ -81,7 +81,7 @@ public class QueueHeroDied
         {
             Player tmp = dsPlayerDied[indexEHero][0];
             dsPlayerDied[indexEHero].RemoveAt(0);
-            tmp.Heart = Data.maxHeart(tmp);
+            Data.LoadData_Hero(tmp,"Hero");
             return tmp;
         }
         else
@@ -96,7 +96,7 @@ public class QueueHeroDied
         {
             Player tmp = dsEnemyDied[indexEHero][0];
             dsEnemyDied[indexEHero].RemoveAt(0);
-            tmp.Heart = Data.maxHeart(tmp);
+            Data.LoadData_Hero(tmp,"Enemy");
             return tmp;
         }
         else

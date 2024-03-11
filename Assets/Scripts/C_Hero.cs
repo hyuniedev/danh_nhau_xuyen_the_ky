@@ -2,7 +2,6 @@
 
 public class C_Hero : MonoBehaviour
 {
-    private int level;
     private float heart;
     private float speedMove;
     private float speedAttack;
@@ -15,11 +14,6 @@ public class C_Hero : MonoBehaviour
     {
         get => rangeAttack;
         set => rangeAttack = value;
-    }
-    public int Level
-    {
-        get => level;
-        set => level = value;
     }
     public int Gia
     {

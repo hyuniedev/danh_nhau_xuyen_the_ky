@@ -16,8 +16,7 @@ public class Player : C_Hero
 
     private void Start()
     {
-        this.Level = 1;
-        Data.LoadData_Hero(this);
+        Data.LoadData_Hero(this,this.gameObject.tag);
         _sliderHeart.maxValue = Heart;
         //set huong di chuyen
         direc = gameObject.tag.Equals("Player") ? Vector2.right : Vector2.left;

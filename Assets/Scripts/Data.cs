@@ -1,5 +1,5 @@
-﻿using System.Collections.Generic;
-
+﻿using System;
+using System.Collections.Generic;
 public class Data
 {
     // Heart - Speed Move - Speed Attack - Range Attack - Dame - Coin
@@ -44,7 +44,7 @@ public class Data
         new List<float> { 1500, 2, 5.5f, 50 }
     };
 
-    public static void LoadData_Hero(Player player)
+    public static void LoadData_Hero(Player player, String typeHero)
     {
         List<List<float>> data_player;
         if (player.ViTri == EHero.Warrior)
@@ -58,37 +58,50 @@ public class Data
         {
             data_player = dataBoss;
         }
+
+        int level = getLevel("Hero", typeHero);
         
-        player.Heart = data_player[player.Level][0];
-        player.SpeedMove = data_player[player.Level][1];
-        player.SpeedAttack = data_player[player.Level][2];
-        player.RangeAttack = data_player[player.Level][3];
-        player.Dame = data_player[player.Level][4];
-        player.Gia = (int)data_player[player.Level][5];
+        player.Heart = data_player[level][0];
+        player.SpeedMove = data_player[level][1];
+        player.SpeedAttack = data_player[level][2];
+        player.RangeAttack = data_player[level][3];
+        player.Dame = data_player[level][4];
+        player.Gia = (int)data_player[level][5];
     }
 
-    public static float maxHeart(Player player)
+    private static int getLevel(String obj, String type)
     {
-        if (player.ViTri == EHero.Warrior)
+        if (obj.Equals("Hero"))
         {
-            return dataWarrior[player.Level][0];
-        }
-        else if (player.ViTri == EHero.Archer)
-        {
-            return dataArcher[player.Level][0];
+            if (type.Equals("Hero"))
+            {
+                return GameManager.level_Hero;
+            }
+            else if(type.Equals("Enemy"))
+            {
+                return GameManager.level_Enemy;
+            }    
         }
         else
         {
-            return dataBoss[player.Level][0];
+            if (type.Equals("Hero"))
+            {
+                return GameManager.level_Tower_Hero;
+            }
+            else if(type.Equals("Enemy"))
+            {
+                return GameManager.level_Tower_Enemy;
+            }
         }
+        return 0;
     }
-
-    public static void LoadData_Tower(Tower tower)  
+    public static void LoadData_Tower(Tower tower, String typeTower)
     {
-        tower.Heart = dataTower[tower.Level][0];
+        int level = getLevel("Tower", typeTower);
+        tower.Heart = dataTower[level][0];
         tower.SpeedMove = 0;
-        tower.SpeedAttack = dataTower[tower.Level][1];
-        tower.RangeAttack = dataTower[tower.Level][2];
-        tower.Dame = dataTower[tower.Level][3];
+        tower.SpeedAttack = dataTower[level][1];
+        tower.RangeAttack = dataTower[level][2];
+        tower.Dame = dataTower[level][3];
     }
 }

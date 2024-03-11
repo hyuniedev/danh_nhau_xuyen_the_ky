@@ -16,7 +16,7 @@ public class Tower : C_Hero
 
     private void Start()
     {
-        Data.LoadData_Tower(this);
+        Data.LoadData_Tower(this,this.gameObject.tag);
         _sliderHeart.maxValue = Heart;
         timer = SpeedAttack;
         targetEnemy = null;
@@ -39,6 +39,10 @@ public class Tower : C_Hero
         }
     }
 
+    private void OnUpdateLevel()
+    {
+        Data.LoadData_Tower(this, this.gameObject.tag);
+    }
     private void Attack()
     {
         if (timer < SpeedAttack)
