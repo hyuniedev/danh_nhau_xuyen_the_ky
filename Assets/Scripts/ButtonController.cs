@@ -11,10 +11,7 @@ public class ButtonController : MonoBehaviour
     [SerializeField] private GameObject[] Pre_Player;
     public void Instan_Hero(int index)
     {
-        int fee = 0;
-        if (index == 0) fee = 5;
-        else if (index == 1) fee = 7;
-        else if (index == 2) fee = 15;
+        int fee = Data.getCoin(index);
         if (GameManager.Coin < fee) return;
         if (GameManager._queueHeroDied.getNumPlayerDied(index) > 0)
         {
@@ -22,12 +19,14 @@ public class ButtonController : MonoBehaviour
             tmp.changeState(new StateMove());
             tmp.transform.position = posHoiSinh();
             GameManager.Coin -= fee;
+            Debug.Log(GameManager.level_Hero);
         }
         else
         {
             Instantiate(Pre_Player[index], posHoiSinh(), this.transform.rotation, ParentPlayer.transform);
             GameManager.Coin -= fee;
         }
+        
     }
 
     public void IncLevel_Hero()

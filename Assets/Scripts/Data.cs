@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using UnityEngine;
+
 public class Data
 {
     // Heart - Speed Move - Speed Attack - Range Attack - Dame - Coin
@@ -30,9 +32,9 @@ public class Data
         // level 1
         new List<float> { 250, 2, 6, 1.2f, 20, 15 },
         // level 2
-        new List<float> { 255, 2, 5.5f, 1.2f, 21, 18 },
+        new List<float> { 255, 2, 5.5f, 1.2f, 22, 23 },
         // level 3
-        new List<float> { 55, 2.3f, 5, 1.2f, 22, 20 },
+        new List<float> { 255, 2.3f, 5, 1.2f, 25, 30 },
     };
     
     // Tower
@@ -60,20 +62,20 @@ public class Data
         }
 
         int level = getLevel("Hero", typeHero);
-        
         player.Heart = data_player[level][0];
         player.SpeedMove = data_player[level][1];
         player.SpeedAttack = data_player[level][2];
         player.RangeAttack = data_player[level][3];
         player.Dame = data_player[level][4];
         player.Gia = (int)data_player[level][5];
+        player.onHeroUpdateLevel();
     }
 
     private static int getLevel(String obj, String type)
     {
         if (obj.Equals("Hero"))
         {
-            if (type.Equals("Hero"))
+            if (type.Equals("Player"))
             {
                 return GameManager.level_Hero;
             }
@@ -84,7 +86,7 @@ public class Data
         }
         else
         {
-            if (type.Equals("Hero"))
+            if (type.Equals("Player"))
             {
                 return GameManager.level_Tower_Hero;
             }
@@ -103,5 +105,20 @@ public class Data
         tower.SpeedAttack = dataTower[level][1];
         tower.RangeAttack = dataTower[level][2];
         tower.Dame = dataTower[level][3];
+    }
+
+    public static int getCoin(int index)
+    {
+        if (index == 0)
+        {
+            return (int)dataWarrior[getLevel("Hero","Hero")][5];
+        }else if (index == 1)
+        {
+            return (int)dataArcher[getLevel("Hero", "Hero")][5];
+        }
+        else
+        {
+            return (int)dataBoss[getLevel("Hero", "Hero")][5];
+        }
     }
 }

@@ -17,7 +17,7 @@ public class Player : C_Hero
     private void Start()
     {
         Data.LoadData_Hero(this,this.gameObject.tag);
-        _sliderHeart.maxValue = Heart;
+        onHeroUpdateLevel();
         //set huong di chuyen
         direc = gameObject.tag.Equals("Player") ? Vector2.right : Vector2.left;
         //set first target
@@ -41,6 +41,10 @@ public class Player : C_Hero
         }
     }
 
+    public void onHeroUpdateLevel()
+    {
+        _sliderHeart.maxValue = Heart;
+    }
     public void changeState(IState newState)
     {
         if (currentState != null)
@@ -80,7 +84,7 @@ public class Player : C_Hero
         else
         {
             timer = 0;
-            Enemy.Heart -= Random.Range(Dame-5,Dame+5);
+            Enemy.Heart -= Dame;
         }
 
         if (!checkEnemy())

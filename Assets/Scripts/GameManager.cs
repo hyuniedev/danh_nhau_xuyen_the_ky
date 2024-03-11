@@ -18,12 +18,12 @@ public class GameManager : MonoBehaviour
     private void Start()
     {
         // set begin coin
-        coin = 100;
+        coin = 50;
         // set default level
-        level_Hero = 1;
-        level_Tower_Hero = 1;
-        level_Enemy = 1;
-        level_Tower_Enemy = 1;
+        level_Hero = 0;
+        level_Tower_Hero = 0;
+        level_Enemy = 0;
+        level_Tower_Enemy = 0;
     }
 
     private void Update()
