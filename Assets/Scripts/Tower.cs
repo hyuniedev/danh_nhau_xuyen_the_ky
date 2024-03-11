@@ -1,7 +1,3 @@
-
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using Random = UnityEngine.Random;
@@ -39,7 +35,7 @@ public class Tower : C_Hero
         }
     }
 
-    private void OnUpdateLevel()
+    public void OnUpdateLevel()
     {
         Data.LoadData_Tower(this, this.gameObject.tag);
     }

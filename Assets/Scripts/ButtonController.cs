@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
@@ -29,6 +30,16 @@ public class ButtonController : MonoBehaviour
         }
     }
 
+    public void IncLevel_Hero()
+    {
+        GameManager.level_Hero++;
+    }
+
+    public void IncLevel_Tower(Tower tower)
+    {
+        GameManager.level_Tower_Hero++;
+        tower.OnUpdateLevel();
+    }
     private Vector3 posHoiSinh()
     {
         return new Vector3(Arr_posHoiSinh[0].position.x,Random.Range(Arr_posHoiSinh[0].position.y,Arr_posHoiSinh[1].position.y),0);
