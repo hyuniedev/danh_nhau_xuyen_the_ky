@@ -19,7 +19,6 @@ public class ButtonController : MonoBehaviour
             tmp.changeState(new StateMove());
             tmp.transform.position = posHoiSinh();
             GameManager.Coin -= fee;
-            Debug.Log(GameManager.level_Hero);
         }
         else
         {
