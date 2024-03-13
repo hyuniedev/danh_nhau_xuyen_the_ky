@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System;
+using Unity.VisualScripting;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
@@ -30,11 +31,17 @@ public class ButtonController : MonoBehaviour
 
     public void IncLevel_Hero()
     {
+        Debug.Log(GameManager.level_Hero);
+        if (GameManager.level_Hero > 1)
+            return;
         GameManager.level_Hero++;
     }
 
     public void IncLevel_Tower(Tower tower)
     {
+        Debug.Log(GameManager.level_Tower_Hero);
+        if (GameManager.level_Tower_Hero > 1)
+            return;
         GameManager.level_Tower_Hero++;
         tower.OnUpdateLevel();
     }
