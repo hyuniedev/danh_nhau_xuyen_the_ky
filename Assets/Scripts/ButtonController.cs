@@ -14,9 +14,9 @@ public class ButtonController : MonoBehaviour
     {
         int fee = Data.getCoin(index);
         if (GameManager.Coin < fee) return;
-        if (GameManager.Instance._queueHeroDied.getNumPlayerDied(index) > 0)
+        if (QueueHeroDied.Instance.getNumPlayerDied(index) > 0)
         {
-            Player tmp = GameManager.Instance._queueHeroDied.getPlayerDied(index);
+            Player tmp = QueueHeroDied.Instance.getPlayerDied(index);
             tmp.changeState(new StateMove());
             tmp.transform.position = posHoiSinh();
             GameManager.Coin -= fee;
@@ -31,7 +31,6 @@ public class ButtonController : MonoBehaviour
 
     public void IncLevel_Hero()
     {
-        Debug.Log(GameManager.Instance.level_Hero);
         if (GameManager.Instance.level_Hero > 1)
             return;
         GameManager.Instance.level_Hero++;
@@ -39,7 +38,6 @@ public class ButtonController : MonoBehaviour
 
     public void IncLevel_Tower(Tower tower)
     {
-        Debug.Log(GameManager.Instance.level_Tower_Hero);
         if (GameManager.Instance.level_Tower_Hero > 1)
             return;
         GameManager.Instance.level_Tower_Hero++;

@@ -1,29 +1,24 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
+
 using UnityEngine;
 using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
-    [SerializeField] private float maxTime;
     [SerializeField] private Text txtCoin;
     private static int coin;
     public int level_Hero { get; set;}
     public int level_Tower_Hero { get; set; }
     public int level_Enemy { get; set; }
     public int level_Tower_Enemy { get; set; }
-    public QueueHeroDied _queueHeroDied = new QueueHeroDied();
-    private static GameManager instance;
-    public static GameManager Instance{
-        get { 
-            if(instance == null){
-                instance = new GameManager();
-            }
-            return instance; 
+    public static GameManager Instance{ get; private set; }
+    private void Awake() {
+        if(Instance != null && Instance!=this){
+            Destroy(this.gameObject);
+        }
+        else{
+            Instance = this;
         }
     }
-
 
     private void Start()
     {

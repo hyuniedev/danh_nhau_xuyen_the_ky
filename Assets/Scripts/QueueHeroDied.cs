@@ -4,7 +4,15 @@ public class QueueHeroDied
 {
     private static List<List<Player>> dsPlayerDied = new List<List<Player>>();
     private static List<List<Player>> dsEnemyDied = new List<List<Player>>();
-
+    private static QueueHeroDied instance;
+    public static QueueHeroDied Instance{
+        get{
+            if(instance == null){
+                instance = new QueueHeroDied();
+            }
+            return instance;
+        }
+    }
     public QueueHeroDied()
     {
         dsPlayerDied.Add(new List<Player>());
@@ -62,7 +70,7 @@ public class QueueHeroDied
 
     public void addEnemyDied(Player player)
     {
-        GameManager.IncCoin(player.Gia);
+        GameManager.Instance.IncCoin(player.Gia);
         if (player.ViTri == EHero.Warrior)
         {
             dsEnemyDied[0].Add(player);

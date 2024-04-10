@@ -102,13 +102,13 @@ public class Player : C_Hero
     {
         if (this.gameObject.tag.Equals("Player"))
         {
-            GameManager._queueHeroDied.addPlayerDied(this);
+            QueueHeroDied.Instance.addPlayerDied(this);
         }
         // is Enemy died
         else
         {
-            GameManager.IncCoin(this.Gia);
-            GameManager._queueHeroDied.addEnemyDied(this);
+            GameManager.Instance.IncCoin(this.Gia);
+            QueueHeroDied.Instance.addEnemyDied(this);
         }
         this.gameObject.SetActive(false);
     }
