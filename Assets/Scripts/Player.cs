@@ -8,11 +8,16 @@ public class Player : C_Hero
     [SerializeField] private LayerMask _layerMaskOfEnemy;
     [Header("Mục tiêu")] [SerializeField] private Transform posTower;
     [SerializeField] private Slider _sliderHeart;
+    private SpriteRenderer spriteRenderer;
     private Transform target;
     private Vector2 direc;
     private C_Hero Enemy;
     private float timer;
     private IState currentState;
+
+    private void Awake() {
+        spriteRenderer = GetComponent<SpriteRenderer>();
+    }
 
     private void Start()
     {
@@ -24,6 +29,7 @@ public class Player : C_Hero
         target = posTower;
         //set state begin
         changeState(new StateMove());
+        spriteRenderer.sortingOrder = 1-(int)transform.position.y;
     }
     
     private void Update()
