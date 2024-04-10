@@ -17,7 +17,7 @@ public class BornEnemy : MonoBehaviour
 
     private void Born()
     {
-        timeBorn = Random.Range(3, 10);
+        timeBorn = Random.Range(5, 10);
         Invoke(nameof(InstanRandomPosition),0);
     }
 

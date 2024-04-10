@@ -77,22 +77,22 @@ public class Data
         {
             if (type.Equals("Player"))
             {
-                return GameManager.level_Hero;
+                return GameManager.Instance.level_Hero;
             }
             else if(type.Equals("Enemy"))
             {
-                return GameManager.level_Enemy;
+                return GameManager.Instance.level_Enemy;
             }    
         }
         else
         {
             if (type.Equals("Player"))
             {
-                return GameManager.level_Tower_Hero;
+                return GameManager.Instance.level_Tower_Hero;
             }
             else if(type.Equals("Enemy"))
             {
-                return GameManager.level_Tower_Enemy;
+                return GameManager.Instance.level_Tower_Enemy;
             }
         }
         return 0;
@@ -111,14 +111,14 @@ public class Data
     {
         if (index == 0)
         {
-            return (int)dataWarrior[getLevel("Hero","Hero")][5];
+            return (int)dataWarrior[getLevel("Hero","Player")][5];
         }else if (index == 1)
         {
-            return (int)dataArcher[getLevel("Hero", "Hero")][5];
+            return (int)dataArcher[getLevel("Hero", "Player")][5];
         }
         else
         {
-            return (int)dataBoss[getLevel("Hero", "Hero")][5];
+            return (int)dataBoss[getLevel("Hero", "Player")][5];
         }
     }
 }
